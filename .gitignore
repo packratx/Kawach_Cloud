@@ -1,0 +1,27 @@
+# Gradle files
+.gradle/
+**/build/
+.idea/
+*.iml
+*.jks
+*.keystore
+secrets/
+local.properties
+**/local.properties
+*.log
+*.tmp
+*.temp
+*.apk
+*.aab
+*.hprof
+*.dex
+TDLib session/local data
+session/
+*.session
+*.db
+*.sqlite
+
+# Generated Android files
+**/generated/
+**/gen/
+**/out/
