@@ -1,7 +1,6 @@
 package com.kawach.cloud
 
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,7 +13,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -34,7 +32,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -109,9 +106,7 @@ fun KawachCloudApp() {
                 composable(Screen.Files.route) { FilesScreen() }
                 composable(Screen.Search.route) { SearchScreen() }
                 composable(Screen.Settings.route) {
-                    SettingsScreen(
-                        onAboutClick = { navController.navigate(Screen.About.route) }
-                    )
+                    SettingsScreen(onAboutClick = { navController.navigate(Screen.About.route) })
                 }
                 composable(Screen.About.route) { AboutScreen() }
             }
@@ -161,7 +156,9 @@ fun WelcomeScreen(onContinue: () -> Unit) {
             listOf("Private", "Encrypted", "Open source").forEach { feature ->
                 Card(
                     shape = RoundedCornerShape(18.dp),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f))
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f)
+                    )
                 ) {
                     Box(modifier = Modifier.padding(horizontal = 16.dp, vertical = 10.dp)) {
                         Text(feature)
@@ -200,13 +197,20 @@ fun HomeScreen() {
         Card(
             modifier = Modifier.fillMaxSize(0.95f),
             shape = RoundedCornerShape(24.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f))
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f)
+            )
         ) {
-            Column(modifier = Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Column(
+                modifier = Modifier.padding(18.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
                 Text("Quick actions")
                 listOf("Upload", "New Folder", "Photos", "Videos", "Documents").forEach { action ->
                     Card(
-                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.12f)),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.12f)
+                        ),
                         shape = RoundedCornerShape(14.dp)
                     ) {
                         Box(modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {
@@ -225,9 +229,14 @@ fun HomeScreen() {
         ).forEach { (name, details) ->
             Card(
                 shape = RoundedCornerShape(18.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f))
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f)
+                )
             ) {
-                Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
                     Text(name)
                     Text(details, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
                 }
@@ -246,11 +255,16 @@ fun FilesScreen() {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text("Files", style = MaterialTheme.typography.headlineMedium)
-        Text("Grid view • List view • Search • Sorting", color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f))
+        Text(
+            "Grid view • List view • Search • Sorting",
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f)
+        )
         repeat(4) { item ->
             Card(
                 shape = RoundedCornerShape(18.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f))
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f)
+                )
             ) {
                 Box(modifier = Modifier.padding(16.dp)) {
                     Text("Folder / File item ${item + 1}")
@@ -273,7 +287,9 @@ fun SearchScreen() {
         Text("Local application search", color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.7f))
         Card(
             shape = RoundedCornerShape(18.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f))
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f)
+            )
         ) {
             Box(modifier = Modifier.padding(16.dp)) {
                 Text("Search files, folders, and metadata")
@@ -296,7 +312,9 @@ fun SettingsScreen(onAboutClick: () -> Unit) {
             Card(
                 onClick = if (item == "About") onAboutClick else { {} },
                 shape = RoundedCornerShape(18.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f))
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f)
+                )
             ) {
                 Box(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
                     Text(item)
