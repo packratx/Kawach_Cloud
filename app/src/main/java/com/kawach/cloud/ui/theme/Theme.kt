@@ -1,4 +1,4 @@
-package com.kawach.cloud
+package com.kawach.cloud.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -14,28 +14,28 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val KawachLightColors = lightColorScheme(
-    primary = Color(0xFF4F8EF7),
+    primary = Color(0xFF2D6DF6),
     onPrimary = Color(0xFFFFFFFF),
-    secondary = Color(0xFF7AA7FF),
-    background = Color(0xFFF4F7FF),
+    secondary = Color(0xFF5B8DEF),
+    background = Color(0xFFF5F8FF),
     surface = Color(0xFFEAF1FF),
-    onBackground = Color(0xFF0F172A),
-    onSurface = Color(0xFF0F172A),
-    tertiary = Color(0xFF8F9DF7),
+    onBackground = Color(0xFF101828),
+    onSurface = Color(0xFF101828),
+    tertiary = Color(0xFF66D6C6),
     onTertiary = Color(0xFFFFFFFF),
     error = Color(0xFFE57373)
 )
 
 private val KawachDarkColors = darkColorScheme(
-    primary = Color(0xFF7AA7FF),
-    onPrimary = Color(0xFF081120),
-    secondary = Color(0xFF9CB8FF),
-    background = Color(0xFF070E1B),
-    surface = Color(0xFF101B2E),
-    onBackground = Color(0xFFEAF2FF),
-    onSurface = Color(0xFFEAF2FF),
-    tertiary = Color(0xFF98A6FF),
-    onTertiary = Color(0xFF081120),
+    primary = Color(0xFF8AB4FF),
+    onPrimary = Color(0xFF07131F),
+    secondary = Color(0xFFB1C7FF),
+    background = Color(0xFF07131F),
+    surface = Color(0xFF101C2D),
+    onBackground = Color(0xFFEAF5FF),
+    onSurface = Color(0xFFEAF5FF),
+    tertiary = Color(0xFF7EE7D8),
+    onTertiary = Color(0xFF07131F),
     error = Color(0xFFEF9A9A)
 )
 
@@ -65,7 +65,7 @@ fun KawachCloudTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = KawachTypography,
         content = content
     )
 }
